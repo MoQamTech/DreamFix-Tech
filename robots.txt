@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://moqamtech.github.io/DreamFix-Tech/sitemap.txt
