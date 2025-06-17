@@ -1132,6 +1132,9 @@
                 <a href="#contact" class="btn btn-secondary" data-lang="header-get-quote">
                     <i class="fas fa-envelope"></i> Get a Quote
                 </a>
+                <a href="technician-registration.html" class="btn btn-primary" data-lang="header-register">
+                    <i class="fas fa-user-plus"></i> Technician Registration
+                </a>
             </div>
             <div class="contact-info animate__animated animate__fadeInUp animate__delay-5s">
                 <div class="contact-item">
@@ -1399,6 +1402,7 @@
                     <li><a href="#" data-lang="footer-link-home">Home</a></li>
                     <li><a href="#services" data-lang="footer-link-services">Services</a></li>
                     <li><a href="#contact" data-lang="footer-link-contact">Contact</a></li>
+                    <li><a href="technician-registration.html" data-lang="footer-link-register">Technician Registration</a></li>
                     <li><a href="#privacy" data-lang="footer-link-privacy">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -1431,6 +1435,7 @@
                 "header-tagline": "Your trusted partner for fast, reliable, and professional home appliance repairs in Eastern Uttar Pradesh",
                 "header-call-now": "<i class=\"fas fa-phone-alt\"></i> Call Now",
                 "header-get-quote": "<i class=\"fas fa-envelope\"></i> Get a Quote",
+                "header-register": "<i class=\"fas fa-user-plus\"></i> Technician Registration",
                 "header-hours": "Mon-Sun: 9AM - 8PM",
                 "service-area": "<i class=\"fas fa-map-marker-alt\"></i> Serving Ballia, Deoria, Mau (U.P.) and surrounding areas",
                 "alert-title": "Customer Alert: Stay Safe!",
@@ -1500,6 +1505,7 @@
                 "footer-link-home": "Home",
                 "footer-link-services": "Services",
                 "footer-link-contact": "Contact",
+                "footer-link-register": "Technician Registration",
                 "footer-link-privacy": "Privacy Policy",
                 "footer-our-services": "Our Services",
                 "footer-service-ac": "AC Repair",
@@ -1515,6 +1521,7 @@
                 "header-tagline": "पूर्वी उत्तर प्रदेश में तेज, विश्वसनीय और पेशेवर घरेलू उपकरण मरम्मत के लिए आपका भरोसेमंद साथी",
                 "header-call-now": "<i class=\"fas fa-phone-alt\"></i> अभी कॉल करें",
                 "header-get-quote": "<i class=\"fas fa-envelope\"></i> कोटेशन प्राप्त करें",
+                "header-register": "<i class=\"fas fa-user-plus\"></i> तकनीशियन पंजीकरण",
                 "header-hours": "सोम-रवि: सुबह 9 बजे - रात 8 बजे",
                 "service-area": "<i class=\"fas fa-map-marker-alt\"></i> बलिया, देवरिया, मऊ (यूपी) और आसपास के क्षेत्रों में सेवा",
                 "alert-title": "ग्राहक अलर्ट: सुरक्षित रहें!",
@@ -1584,6 +1591,7 @@
                 "footer-link-home": "होम",
                 "footer-link-services": "सेवाएं",
                 "footer-link-contact": "संपर्क",
+                "footer-link-register": "तकनीशियन पंजीकरण",
                 "footer-link-privacy": "गोपनीयता नीति",
                 "footer-our-services": "हमारी सेवाएं",
                 "footer-service-ac": "एसी रिपेयर",
@@ -1698,7 +1706,6 @@
                 }
             });
         };
-
         window.addEventListener('load', () => {
             const elements = document.querySelectorAll('.service-card, .benefit-card');
             elements.forEach(el => {
@@ -1708,9 +1715,7 @@
             });
             animateOnScroll();
         });
-
         window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
-
 </html>
