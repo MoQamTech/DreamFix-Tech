@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title data-lang="title">Technician Registration | DreamFix Tech</title>
+    <meta name="description" content="Join DreamFix Tech as a certified technician. Register now to provide AC, fridge, and washing machine repair services in Ballia, Deoria, Mau (U.P.).">
+    <link rel="icon" type="image/png" href="https://moqamtech.github.io/DreamFix-Tech/images/logo.png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+         :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #facc15;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --danger: #ef4444;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --accent: #06b6d4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+            width: 100vw;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .registration-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            width: 100%;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 0.5rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(37, 99, 235, 0.2);
+        }
+        
+        .form-error {
+            display: none;
+            color: var(--danger);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .form-error.show {
+            display: block;
+        }
+        
+        .form-submit {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .form-submit:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            transform: scale(1.02);
+        }
+        
+        .otp-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .otp-input {
+            width: 70%;
+        }
+        
+        .otp-button {
+            width: 30%;
+            padding: 0.75rem;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            color: var(--dark);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .otp-button:hover {
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: scale(1.02);
+        }
+        
+        .otp-button:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .image-preview {
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 0.5rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+        
+        .privacy-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .language-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .language-float:hover {
+            transform: scale(1.15);
+        }
+        
+        .hi-text {
+            font-size: 0.9em;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .otp-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .otp-input,
+            .otp-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-text">DreamFix Tech</span>
+        </div>
+        <p class="tagline" data-lang="header-tagline">Join our team of certified technicians<br><span class="hi-text" data-lang="header-tagline-hi">हमारी प्रमाणित तकनीशियनों की टीम में शामिल हों</span></p>
+    </header>
+    <main>
+        <section class="registration-section">
+            <h2 class="section-title" data-lang="registration-title">Technician Registration</h2>
+            <div class="registration-form">
+                <form id="technicianForm">
+                    <div class="form-group">
+                        <label for="techName" class="form-label" data-lang="form-name-label">Your Name</label>
+                        <input type="text" id="techName" class="form-input" required placeholder="Enter your name" data-lang-placeholder="form-name-placeholder">
+                        <div id="techNameError" class="form-error" data-lang="form-name-error">Name should contain only letters and spaces.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fatherName" class="form-label" data-lang="form-father-name-label">Father's Name</label>
+                        <input type="text" id="fatherName" class="form-input" required placeholder="Enter father's name" data-lang-placeholder="form-father-name-placeholder">
+                        <div id="fatherNameError" class="form-error" data-lang="form-father-name-error">Father's name should contain only letters and spaces.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="techPhone" class="form-label" data-lang="form-phone-label">Phone Number</label>
+                        <input type="tel" id="techPhone" class="form-input" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" data-lang-placeholder="form-phone-placeholder">
+                        <div id="techPhoneError" class="form-error" data-lang="form-phone-error">Phone number must be exactly 10 digits.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="otp" class="form-label" data-lang="form-otp-label">OTP</label>
+                        <div class="otp-group">
+                            <input type="text" id="otp" class="form-input otp-input" placeholder="Enter OTP" data-lang-placeholder="form-otp-placeholder">
+                            <button type="button" id="sendOtp" class="otp-button" data-lang="form-send-otp">Send OTP</button>
+                        </div>
+                        <div id="otpError" class="form-error" data-lang="form-otp-error">Invalid OTP.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="aadhaarPhoto" class="form-label" data-lang="form-aadhaar-label">Aadhaar Card Photo (JPEG/PNG, Max 2MB)</label>
+                        <input type="file" id="aadhaarPhoto" class="form-input" accept="image/jpeg,image/png" required>
+                        <img id="aadhaarPreview" class="image-preview" alt="Aadhaar Preview">
+                        <div id="aadhaarPhotoError" class="form-error" data-lang="form-aadhaar-error">Please upload a JPEG/PNG image under 2MB.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="techPhoto" class="form-label" data-lang="form-tech-photo-label">Your Photo (JPEG/PNG, Max 2MB)</label>
+                        <input type="file" id="techPhoto" class="form-input" accept="image/jpeg,image/png" required>
+                        <img id="techPhotoPreview" class="image-preview" alt="Technician Photo Preview">
+                        <div id="techPhotoError" class="form-error" data-lang="form-tech-photo-error">Please upload a JPEG/PNG image under 2MB.</div>
+                    </div>
+                    <button type="submit" class="form-submit" data-lang="form-submit" disabled>Register</button>
+                </form>
+            </div>
+        </section>
+        <section class="privacy-section">
+            <h2 class="section-title" data-lang="privacy-title">Privacy Policy</h2>
+            <div class="privacy-content">
+                <h3 data-lang="privacy-heading">Our Commitment to Your Privacy</h3>
+                <p data-lang="privacy-intro">At DreamFix Tech, we value your privacy and are committed to protecting your personal information.</p>
+                <h3 data-lang="privacy-data-heading">Data Collection</h3>
+                <ul>
+                    <li data-lang="privacy-data-2">Technician: Name, father's name, phone, Aadhaar photo, personal photo.</li>
+                </ul>
+                <h3 data-lang="privacy-technician-heading">Technician Terms</h3>
+                <ul>
+                    <li data-lang="privacy-technician-1">10% commission per service request.</li>
+                    <li data-lang="privacy-technician-2">One-time registration with unique phone number.</li>
+                </ul>
+                <h3 data-lang="privacy-security-heading">Data Security</h3>
+                <p data-lang="privacy-security">We implement reasonable security measures to protect your data.</p>
+            </div>
+        </section>
+    </main>
+    <div class="language-float" id="languageToggle"><i class="fas fa-globe"></i></div>
+    <script>
+        const translations = {
+            en: {
+                "title": "Technician Registration | DreamFix Tech",
+                "header-tagline": "Join our team of certified technicians",
+                "header-tagline-hi": "हमारी प्रमाणित तकनीशियनों की टीम में शामिल हों",
+                "registration-title": "Technician Registration",
+                "form-name-label": "Your Name",
+                "form-name-placeholder": "Enter your name",
+                "form-name-error": "Name should contain only letters and spaces.",
+                "form-father-name-label": "Father's Name",
+                "form-father-name-placeholder": "Enter father's name",
+                "form-father-name-error": "Father's name should contain only letters and spaces.",
+                "form-phone-label": "Phone Number",
+                "form-phone-placeholder": "Enter 10-digit phone number",
+                "form-phone-error": "Phone number must be exactly 10 digits.",
+                "form-otp-label": "OTP",
+                "form-otp-placeholder": "Enter OTP",
+                "form-otp-error": "Invalid OTP.",
+                "form-send-otp": "Send OTP",
+                "form-aadhaar-label": "Aadhaar Card Photo (JPEG/PNG, Max 2MB)",
+                "form-aadhaar-error": "Please upload a JPEG/PNG image under 2MB.",
+                "form-tech-photo-label": "Your Photo (JPEG/PNG, Max 2MB)",
+                "form-tech-photo-error": "Please upload a JPEG/PNG image under 2MB.",
+                "form-submit": "Register",
+                "privacy-title": "Privacy Policy",
+                "privacy-heading": "Our Commitment to Your Privacy",
+                "privacy-intro": "At DreamFix Tech, we value your privacy and are committed to protecting your personal information.",
+                "privacy-data-heading": "Data Collection",
+                "privacy-data-2": "Technician: Name, father's name, phone, Aadhaar photo, personal photo.",
+                "privacy-technician-heading": "Technician Terms",
+                "privacy-technician-1": "10% commission per service request.",
+                "privacy-technician-2": "One-time registration with unique phone number.",
+                "privacy-security-heading": "Data Security",
+                "privacy-security": "We implement reasonable security measures to protect your data."
+            },
+            hi: {
+                "title": "तकनीशियन पंजीकरण | ड्रीमफिक्स टेक",
+                "header-tagline": "हमारी प्रमाणित तकनीशियनों की टीम में शामिल हों",
+                "header-tagline-hi": "हमारी टीम में शामिल हों",
+                "registration-title": "तकनीशियन पंजीकरण",
+                "form-name-label": "आपका नाम",
+                "form-name-placeholder": "अपना नाम दर्ज करें",
+                "form-name-error": "नाम में केवल अक्षर और रिक्त स्थान होने चाहिए।",
+                "form-father-name-label": "पिता का नाम",
+                "form-father-name-placeholder": "पिता का नाम दर्ज करें",
+                "form-father-name-error": "पिता के नाम में केवल अक्षर और रिक्त स्थान होने चाहिए।",
+                "form-phone-label": "फोन नंबर",
+                "form-phone-placeholder": "10 अंकों का फोन नंबर दर्ज करें",
+                "form-phone-error": "फोन नंबर ठीक 10 अंकों का होना चाहिए।",
+                "form-otp-label": "ओटीपी",
+                "form-otp-placeholder": "ओटीपी दर्ज करें",
+                "form-otp-error": "अमान्य ओटीपी।",
+                "form-send-otp": "ओटीपी भेजें",
+                "form-aadhaar-label": "आधार कार्ड फोटो (JPEG/PNG, अधिकतम 2MB)",
+                "form-aadhaar-error": "कृपया 2MB से कम का JPEG/PNG चित्र अपलोड करें।",
+                "form-tech-photo-label": "आपकी फोटो (JPEG/PNG, अधिकतम 2MB)",
+                "form-tech-photo-error": "कृपया 2MB से कम का JPEG/PNG चित्र अपलोड करें।",
+                "form-submit": "पंजीकरण करें",
+                "privacy-title": "गोपनीयता नीति",
+                "privacy-heading": "आपकी गोपनीयता के प्रति हमारी प्रतिबद्धता",
+                "privacy-intro": "ड्रीमफिक्स टेक में, हम आपकी गोपनीयता को महत्व देते हैं और आपकी व्यक्तिगत जानकारी की सुरक्षा के लिए प्रतिबद्ध हैं।",
+                "privacy-data-heading": "डेटा संग्रह",
+                "privacy-data-2": "तकनीशियन: नाम, पिता का नाम, फोन, आधार फोटो, व्यक्तिगत फोटो।",
+                "privacy-technician-heading": "तकनीशियन शर्तें",
+                "privacy-technician-1": "प्रति सेवा अनुरोध 10% कमीशन।",
+                "privacy-technician-2": "एक बार पंजीकरण, अद्वितीय फोन नंबर के साथ।",
+                "privacy-security-heading": "डेटा सुरक्षा",
+                "privacy-security": "हम आपके डेटा की सुरक्षा के लिए उचित सुरक्षा उपाय लागू करते हैं।"
+            }
+        };
+        let currentLang = 'en';
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-lang-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-lang-placeholder');
+                if (translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            document.title = translations[lang].title;
+        }
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            updateLanguage(currentLang === 'en' ? 'hi' : 'en');
+        });
+        let generatedOtp = '';
+        document.getElementById('sendOtp').addEventListener('click', () => {
+            const phone = document.getElementById('techPhone').value;
+            if (/^\d{10}$/.test(phone)) {
+                generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+                console.log(`OTP for ${phone}: ${generatedOtp}`); // Simulate SMS
+                alert('OTP sent to your phone (check console for demo).');
+                document.getElementById('sendOtp').disabled = true;
+                setTimeout(() => {
+                    document.getElementById('sendOtp').disabled = false;
+                }, 30000);
+            } else {
+                document.getElementById('techPhoneError').classList.add('show');
+            }
+        });
+
+        function validateFile(file, errorElement, previewElement) {
+            const maxSize = 2 * 1024 * 1024; // 2MB
+            const allowedTypes = ['image/jpeg', 'image/png'];
+            if (!allowedTypes.includes(file.type)) {
+                errorElement.classList.add('show');
+                return false;
+            }
+            if (file.size > maxSize) {
+                errorElement.classList.add('show');
+                return false;
+            }
+            errorElement.classList.remove('show');
+            const reader = new FileReader();
+            reader.onload = () => {
+                previewElement.src = reader.result;
+                previewElement.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+            return true;
+        }
+        document.getElementById('aadhaarPhoto').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                validateFile(file, document.getElementById('aadhaarPhotoError'), document.getElementById('aadhaarPreview'));
+            }
+        });
+        document.getElementById('techPhoto').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                validateFile(file, document.getElementById('techPhotoError'), document.getElementById('techPhotoPreview'));
+            }
+        });
+        document.getElementById('technicianForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+            const name = document.getElementById('techName').value;
+            const fatherName = document.getElementById('fatherName').value;
+            const phone = document.getElementById('techPhone').value;
+            const otp = document.getElementById('otp').value;
+            const aadhaarFile = document.getElementById('aadhaarPhoto').files[0];
+            const techFile = document.getElementById('techPhoto').files[0];
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                document.getElementById('techNameError').classList.add('show');
+                isValid = false;
+            }
+            if (!/^[a-zA-Z\s]+$/.test(fatherName)) {
+                document.getElementById('fatherNameError').classList.add('show');
+                isValid = false;
+            }
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById('techPhoneError').classList.add('show');
+                isValid = false;
+            }
+            if (otp !== generatedOtp) {
+                document.getElementById('otpError').classList.add('show');
+                isValid = false;
+            }
+            if (aadhaarFile && !validateFile(aadhaarFile, document.getElementById('aadhaarPhotoError'), document.getElementById('aadhaarPreview'))) {
+                isValid = false;
+            }
+            if (techFile && !validateFile(techFile, document.getElementById('techPhotoError'), document.getElementById('techPhotoPreview'))) {
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Registration successful! (Demo: Data logged to console)');
+                console.log({
+                    name,
+                    fatherName,
+                    phone,
+                    aadhaarFile: aadhaarFile.name,
+                    techFile: techFile.name
+                });
+                document.getElementById('technicianForm').reset();
+                document.getElementById('aadhaarPreview').style.display = 'none';
+                document.getElementById('techPhotoPreview').style.display = 'none';
+            }
+        });
+        document.getElementById('otp').addEventListener('input', () => {
+            const otp = document.getElementById('otp').value;
+            const submitButton = document.querySelector('.form-submit');
+            if (otp === generatedOtp && generatedOtp !== '') {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        });
+        updateLanguage(currentLang);
+    </script>
+</body>
+
+</html>
