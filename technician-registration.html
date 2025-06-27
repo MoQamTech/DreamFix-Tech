@@ -309,7 +309,7 @@
             <i class="fas fa-tools logo-icon"></i>
             <span class="logo-text">DreamFix Tech</span>
         </div>
-        <p class="tagline" data-lang="header-tagline">Join our team of certified technicians<br><span class="hi-text" data-lang="header-tagline-hi">हमारी प्रमाणित तकनीशियनों की टीम में शामिल हों</span></p>
+        <p class="tagline" data-lang="header-tagline">Join our teams<br><span class="hi-text" data-lang="header-tagline-hi">हमारी टीम में शामिल हों</span></p>
     </header>
     
     <main>
@@ -376,7 +376,7 @@
         </section>
     </main>
     
-    <a href="https://wa.me/917236836121" class="whatsapp-float animate__animated animate__bounceIn" target="_blank" aria-label="Contact us on WhatsApp">
+    <a href="https://wa.me/919554840302" class="whatsapp-float animate__animated animate__bounceIn" target="_blank" aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     
@@ -486,7 +486,7 @@
             if (/^\d{10}$/.test(phone)) {
                 generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
                 const message = `Your OTP for DreamFix Tech technician registration is: ${generatedOtp}`;
-                window.open(`https://wa.me/917236836121?text=${encodeURIComponent(message)}`, '_blank');
+                window.open(`https://wa.me/919554840302?text=${encodeURIComponent(message)}`, '_blank');
                 document.getElementById('sendOtp').disabled = true;
                 setTimeout(() => {
                     document.getElementById('sendOtp').disabled = false;
@@ -568,7 +568,7 @@
             
             if (isValid) {
                 const message = `Technician Registration%0A%0AName: ${encodeURIComponent(name)}%0AFather's Name: ${encodeURIComponent(fatherName)}%0APhone: ${encodeURIComponent(phone)}%0AAadhaar Photo: Attached%0APersonal Photo: Attached`;
-                window.open(`https://wa.me/917236836121?text=${message}`, '_blank');
+                window.open(`https://wa.me/919554840302?text=${message}`, '_blank');
                 document.getElementById('technicianForm').reset();
                 document.getElementById('aadhaarPreview').style.display = 'none';
                 document.getElementById('techPhotoPreview').style.display = 'none';
